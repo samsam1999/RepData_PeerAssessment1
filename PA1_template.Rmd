@@ -10,7 +10,7 @@ library(ggplot2)
 ## Step 2 - Read the source data into the dataframe - rawdf
 
 ```{r Read_Source_Data, echo=TRUE}
-rawdf <- read.csv('C:/Users/Sam/Documents/ReproducibleResearch/Raw/activity.csv', na.strings = "NA")
+rawdf <- read.csv('C:/Users/Sam/Documents/RepData/RepData_PeerAssessment1/activity.csv', na.strings = "NA")
 rawdf$date <- as.Date(rawdf$date)
 ```
 
@@ -79,7 +79,7 @@ stepbydates_2 <- group_by(rawdf_2, date) %>% summarise(sumsteps = sum(steps))
 ## Step 12 - Plot the histogram showing the total number of steps taken in the dataframe rawdf_2
 
 ```{r Histogram_Total_Steps_NoMissing, echo=TRUE}
-hist(stepbydates_2$sumsteps, xlab = 'Total number of steps taken per day', main = 'Histogram of total number of steps taken per day (missing data filled)')
+hist(stepbydates_2$sumsteps, xlab = 'Total number of steps taken per day', main = 'Histogram of total number of steps taken per day - NA filled')
 ```
 
 ## Step 12 - Calculate the mean and median of the total number of steps taken each day in the dataframe rawdf_2

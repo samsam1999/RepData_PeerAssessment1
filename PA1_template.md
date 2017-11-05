@@ -12,7 +12,7 @@ library(ggplot2)
 
 
 ```r
-rawdf <- read.csv('C:/Users/Sam/Documents/ReproducibleResearch/Raw/activity.csv', na.strings = "NA")
+rawdf <- read.csv('C:/Users/Sam/Documents/RepData/RepData_PeerAssessment1/activity.csv', na.strings = "NA")
 rawdf$date <- as.Date(rawdf$date)
 ```
 
@@ -95,7 +95,7 @@ stepbydates_2 <- group_by(rawdf_2, date) %>% summarise(sumsteps = sum(steps))
 
 
 ```r
-hist(stepbydates_2$sumsteps, xlab = 'Total number of steps taken per day', main = 'Histogram of total number of steps taken per day (missing data filled)')
+hist(stepbydates_2$sumsteps, xlab = 'Total number of steps taken per day', main = 'Histogram of total number of steps taken per day - NA filled')
 ```
 
 ![plot of chunk Histogram_Total_Steps_NoMissing](figure/Histogram_Total_Steps_NoMissing-1.png)
